@@ -71,7 +71,7 @@ function AddUsers() {
   var mail=document.querySelector("#mail").value
   var username=document.querySelector("#usrname").value;
   let userbox = JSON.parse(localStorage.getItem('users'));
-  let newuser = userbox.find(user => user.mail === mail);
+  let newuser = userbox.find((user)=> user.Mail === mail && user.Username===username);
 
   if(newuser == undefined) {
     userbox.push({
@@ -83,7 +83,7 @@ function AddUsers() {
     localStorage.setItem('users',JSON.stringify(userbox))
   }
   else{
-     alert("Bu adda istofadeci artiq movcuddur")
+     alert("Bu adda istifadeci artiq movcuddur!")
   }
 
 
